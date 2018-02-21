@@ -30,7 +30,7 @@ Functions for actually making API calls
 
 1. Ensure you have completed the adding new functionality steps for the psipred_webiste application
 
-2. In main.js update base vars and strings from var ractive = new Ractive({
+2. In main.js update base vars and strings from var ractive = new Ractive({ 
       memsatsvm_checked: true,
       memsatsvm_button: false,
       memsatsvm_job: 'memsatsvm_job',
