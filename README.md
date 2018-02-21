@@ -30,7 +30,7 @@ Functions for actually making API calls
 
 1. Ensure you have completed the adding new functionality steps for the psipred_webiste application
 
-2. In main.js update base vars and strings from var ractive = new Ractive({ 
+2. In main.js update base vars and strings from var ractive = new Ractive({
       memsatsvm_checked: true,
       memsatsvm_button: false,
       memsatsvm_job: 'memsatsvm_job',
@@ -43,7 +43,6 @@ Functions for actually making API calls
       handle_results():ractive_helpers/ractive_helpers.js
       set_downloads_panel():ractive_helpers/ractive_helpers.js
 
-
 4. Update the button toggles. Find these below ractive.on( 'downloads_active', function ( event ) {
 
 5. Update submit event at ractive.on('submit', and update_and_send_forms()
@@ -53,3 +52,5 @@ Functions for actually making API calls
       clear_settings(): ractive_helpers/ractive_helpers.js
 
 7. Update the watcher for the UUID at if(getUrlVars().uuid && uuid_match)
+
+8. Ensure the verify_form() correct handles all inputs
