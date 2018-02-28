@@ -31,12 +31,9 @@ Functions for actually making API calls
 1. Ensure you have completed the adding new functionality steps for the psipred_webiste application
 
 2. In main.js update base vars and strings from var ractive = new Ractive({
-      memsatsvm_checked: true,
-      memsatsvm_button: false,
-      memsatsvm_job: 'memsatsvm_job',
-      memsatsvm_waiting_message: '<h2>Please wait for your MEMSAT_SVM job to process</h2>',
-      memsatsvm_waiting_icon: '<object width="140" height="140" type="image/svg+xml" data="http://bioinf.cs.ucl.ac.uk/psipred_beta/static/images/gears.svg"/>',
-      memsatsvm_time: 'Unknown',
+      update job_list and job_names to add the new job type
+      update initialisation_data to included new vars to hold the job results, to match the
+      results panel in the webapp.
 
 3. Update ractive.on('poll_trigger'), updating functions:
       prepare_downloads_html():ractive_helpers/ractive_helpers.js
@@ -50,6 +47,7 @@ Functions for actually making API calls
 
 6. Update resubmit event at ractive.on('resubmit', and clear_settings()
       clear_settings(): ractive_helpers/ractive_helpers.js
+      needs to match up with the initialisers are the top of main.js (initialisation_data content)
 
 7. Update the watcher for the UUID at if(getUrlVars().uuid && uuid_match)
 
