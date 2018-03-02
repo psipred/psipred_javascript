@@ -28,27 +28,27 @@ Functions for actually making API calls
 
 # Adding new service functionality
 
-1. Ensure you have completed the adding new functionality steps for the psipred_webiste application
+1. Ensure you have completed the adding new functionality steps for the psipred_webiste application. Adding new model fields and updating the results panel template. Take a note of the new results panel value you added.
 
-2. In main.js update base vars and strings from var ractive = new Ractive({
-      update job_list and job_names to add the new job type
-      update initialisation_data to included new vars to hold the job results, to match the
-      results panel in the webapp.
+2. In main.js add new job to the end of job_list and a name to job_name
+3. Add new key(s) to initialisation_data to hold the results data for the job
+4. Check if the active listeners need a new biod3 call (around line 280)
+5. for UUID submission/lookup add new button trigger (from line 370)
 
-3. Update ractive.on('poll_trigger'), updating functions:
-      prepare_downloads_html():ractive_helpers/ractive_helpers.js
-      handle_results():ractive_helpers/ractive_helpers.js
-      set_downloads_panel():ractive_helpers/ractive_helpers.js
+6. In forms_index.js add new [job_name].checked to array in the verify_form() calls
+7. In the checked loop (line 36)  add any new button addition exceptions
 
-4. Update the button toggles. Find these below ractive.on( 'downloads_active', function ( event ) {
+8. In parsers_index.js add any new parsers for the data files for your job. This will
+   tie more closely to the parser calls in request_index.js see 13
 
-5. Update submit event at ractive.on('submit', and update_and_send_forms()
-      verify_and_send_forms : forms/forms_index.js
+9. In ractive_helpers.js add new unsetter in the clear_settings() to match any keys
+   you added in step 3 above.
+10. In prepare_downloads_html() add any exceptions for job types that have downloads of
+    other types.
+11. In handle_results() add new if(result_dict.name === [DATA_FILE]) to handle the
+    news results file, adding to the downloads string, calling a process_file() etc.
+12. Update set_downloads_panel() to show the links for your downloads that your
+    added in handle_results()
 
-6. Update resubmit event at ractive.on('resubmit', and clear_settings()
-      clear_settings(): ractive_helpers/ractive_helpers.js
-      needs to match up with the initialisers are the top of main.js (initialisation_data content)
-
-7. Update the watcher for the UUID at if(getUrlVars().uuid && uuid_match)
-
-8. Ensure the verify_form() correct handles all inputs
+13. In requests_index.js in process_file() add a new if for the new data type your want
+    to parse see 8.
