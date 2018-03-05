@@ -35,8 +35,7 @@ Functions for actually making API calls
 4. Check if the active listeners need a new biod3 call (around line 280)
 5. for UUID submission/lookup add new button trigger (from line 370)
 
-6. In forms_index.js add new [job_name].checked to array in the verify_form() calls
-7. In the checked loop (line 36)  add any new button addition exceptions
+6. In forms_index.js In the checked loop (line 36)  add any new button addition exceptions
 
 8. In parsers_index.js add any new parsers for the data files for your job. This will
    tie more closely to the parser calls in request_index.js see 13
