@@ -33,7 +33,7 @@ Functions for actually making API calls
 2. In main.js add new job to the end of job_list and a name to job_name
 3. Add new key(s) to initialisation_data to hold the results data for the job (probably needs to happen with step 9 though)
 4. Check if the active listeners need a new biod3 call (around line 280)
-5. for UUID submission/lookup add new button trigger (from line 380)
+5. for UUID submission/lookup add new button trigger (from line 470)
 
 6. In forms_index.js in the checked loop (line 36) add any new button addition exceptions
     (adds the select buttons on submission that are added in step 5)
