@@ -53,3 +53,6 @@ Functions for actually making API calls
 12. In parsers_index.js add any new parsers for the data files for your job. This will
     tie more closely to the parser calls in request_index.js see 13
 13. Doublecheck 7 above in case you added new things to hold data in step 12
+
+14. In ractive.on(submit) makes sure you catch all the form elements and pass them to verif_and_send(). Note that form elements are only available if they are visible
+25. Ensure send_job() correctly appends new options to the form
