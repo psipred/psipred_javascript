@@ -35,17 +35,13 @@ Functions for actually making API calls
 4. Check if the active listeners need a new biod3 call (around line 280)
 5. for UUID submission/lookup add new button trigger (from line 470)
 
-6. In forms_index.js in the checked loop (line 36) add any new button addition exceptions
-    (adds the select buttons on submission that are added in step 5)
-
 7. In ractive_helpers.js add new unsetter in the clear_settings() to match any keys
    you added in step 3 above.
 8. In prepare_downloads_html() add any exceptions for job types that have downloads of
     other types.
 9. In handle_results() add new if(result_dict.name === [DATA_FILE]) to handle the
     news results file, adding to the downloads string, calling a process_file() etc.
-10. Update set_downloads_panel() to show the links for your downloads that your
-    added in handle_results()
+
 
 11. In requests_index.js in process_file() add a new if for the new data type your want
     to parse see 14.
