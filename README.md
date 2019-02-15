@@ -30,25 +30,25 @@ Functions for actually making API calls
 
 1. Ensure you have completed the adding new functionality steps for the psipred_webiste application. Adding new model fields and updating the results panel template. Take a note of the new results panel value you added.
 
-2. In main.js add new job to the end of job_list and a name to job_name
-3. Add new key(s) to initialisation_data to hold the results data for the job (probably needs to happen with step 9 though)
+2. In main.js add new job to the end of job_list and a name to job_name, (line 40)
+3. Add new key(s) to initialisation_data to hold the results data for the job (probably needs to happen with step 9 though) near line 100
 4. Check if the active listeners need a new biod3 call (around line 280)
-5. for UUID submission/lookup add new button trigger (from line 470)
+5. for UUID submission/lookup add new panel display trigger (from line 670)
 
 7. In ractive_helpers.js add new unsetter in the clear_settings() to match any keys
-   you added in step 3 above.
+   you added in step 3 above. (line 10)
 8. In prepare_downloads_html() add any exceptions for job types that have downloads of
-    other types.
+    other types. e.g bioserf also servers pgenthreader results
 9. In handle_results() add new if(result_dict.name === [DATA_FILE]) to handle the
     news results file, adding to the downloads string, calling a process_file() etc.
+    Follow along with others in the file
 
-
-11. In requests_index.js in process_file() add a new if for the new data type your want
-    to parse see 14.
+11. In requests_index.js in process_file() add a new if for the new data type you want
+    to parse see point 14.
 
 12. In parsers_index.js add any new parsers for the data files for your job. This will
     tie more closely to the parser calls in request_index.js see 13
 13. Doublecheck 7 above in case you added new things to hold data in step 12
 
-14. In ractive.on(submit) makes sure you catch all the form elements and pass them to verif_and_send(). Note that form elements are only available if they are visible
+14. In ractive.on(submit) makes sure you catch all the form elements and pass them to verify_and_send(). Note that form elements are only available if they are visible on the html page
 25. Ensure send_job() correctly appends new options to the form
