@@ -8,6 +8,7 @@ const path = require('path');
 
 module.exports = [
 {
+  mode: 'production',
   // name: 'client',
   entry: {
     app: ['./lib/main.js'], // This is the main file that gets loaded first; the "bootstrap", if you will.
@@ -24,26 +25,45 @@ module.exports = [
   // threw the exception or console.log or whathaveyounot.
   devtool: 'inline-source-map',
   module: {
-    loaders: [
-      {
-        test: /\.js?$/, // Another convention is to use the .es6 filetype, but you then
-                        // have to supply that explicitly in import statements, which isn't cool.
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-      },
-      // This nifty bit of magic right here allows us to load entire JSON files
-      // synchronously using `require`, just like in NodeJS.
-      {
-        test: /\.json$/,
-        loader: 'json-loader',
-      },
-      // This allows you to `require` CSS files.
-      // We be in JavaScript land here, baby! No <style> tags for us!
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader',
-      },
-    ],
+    rules: [{
+      test: /\.js?$/, // Another convention is to use the .es6 filetype, but you then
+                      // have to supply that explicitly in import statements, which isn't cool.
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel-loader',
+    },
+    // This nifty bit of magic right here allows us to load entire JSON files
+    // synchronously using `require`, just like in NodeJS.
+    {
+      test: /\.json$/,
+      loader: 'json-loader',
+    },
+    // This allows you to `require` CSS files.
+    // We be in JavaScript land here, baby! No <style> tags for us!
+    {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader',
+    },
+    ]
+    // loaders: [
+    //   {
+    //     test: /\.js?$/, // Another convention is to use the .es6 filetype, but you then
+    //                     // have to supply that explicitly in import statements, which isn't cool.
+    //     exclude: /(node_modules|bower_components)/,
+    //     loader: 'babel-loader',
+    //   },
+    //   // This nifty bit of magic right here allows us to load entire JSON files
+    //   // synchronously using `require`, just like in NodeJS.
+    //   {
+    //     test: /\.json$/,
+    //     loader: 'json-loader',
+    //   },
+    //   // This allows you to `require` CSS files.
+    //   // We be in JavaScript land here, baby! No <style> tags for us!
+    //   {
+    //     test: /\.css$/,
+    //     loader: 'style-loader!css-loader',
+    //   },
+    // ],
   },
 },
 ];
