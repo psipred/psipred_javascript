@@ -27,28 +27,42 @@ for clarity
 Functions for actually making API calls
 
 # Adding new service functionality
+Have added the comment lines that mark the areas
 
-1. Ensure you have completed the adding new functionality steps for the psipred_webiste application. Adding new model fields and updating the results panel template. Take a note of the new results panel value you added.
+1. Ensure you have completed the adding new functionality steps for the psipred_webiste application. Adding new model fields and updating the results panel template. Take a note of the new results panel values you added.
 
 2. In main.js add new job to the end of job_list and a name to job_name, (line 40)
-3. Add new key(s) to initialisation_data to hold the results data for the job (probably needs to happen with step 9 though) near line 100
-4. Check if the active listeners need a new biod3 call (around line 280)
-5. for UUID submission/lookup add new panel display trigger (from line 670)
-
+    //JOB LISTS
+3. Add new key(s) to initialisation_data to hold the results data for the job (probably needs to happen with step 7 and 9
+   though) near line 100
+    //INITIALISATION DATA
+4. Check if the active listeners need a new biod3 call (around line 496) and if the results found object needs updating
+    //RESULT POLL FLAGS
+    //LISTENERS
+    listeners need updated if a pdb or biod3 object needs redrawn when
+5. Does the method need an advanced panel toggle (around line 370) and the sections below for toggling the seq and struct
+   forms
+    //ADVANCED PANELS
+6. for UUID submission/lookup add new panel display trigger (from line 790)
+    // PANEL DISPLAY
 7. In ractive_helpers.js add new unsetter in the clear_settings() to match any keys
    you added in step 3 above. (line 10)
+    //UNSETTERS
 8. In prepare_downloads_html() add any exceptions for job types that have downloads of
     other types. e.g bioserf also servers pgenthreader results
+    //DOWNLOAD EXCEPTIONS
 9. In handle_results() add new if(result_dict.name === [DATA_FILE]) to handle the
     news results file, adding to the downloads string, calling a process_file() etc.
     Follow along with others in the file
-
+    //RESULTS VARS
+    //RESULTS DECISIONS
+    //PRODUCED NOTHING
+    //DOWNLOADS PANEL
 11. In requests_index.js in process_file() add a new if for the new data type you want
-    to parse see point 14.
-
+    to parse, if a parser is needed, see point 14.
+    //PARSE DECISION
 12. In parsers_index.js add any new parsers for the data files for your job. This will
     tie more closely to the parser calls in request_index.js see 13
 13. Doublecheck 7 above in case you added new things to hold data in step 12
-
-14. In ractive.on(submit) makes sure you catch all the form elements and pass them to verify_and_send(). Note that form elements are only available if they are visible on the html page
-25. Ensure send_job() correctly appends new options to the form
+14. In main.js  - ractive.on(submit) makes sure you catch all the form elements and pass them to verify_and_send(). Note that form elements are only available if they are visible on the html page
+15. Ensure send_job() correctly appends new options to the form - if you have advanced options
