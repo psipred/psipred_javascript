@@ -33,8 +33,7 @@ Have added the comment lines that mark the areas
 
 2. In main.js add new job to the end of job_list and a name to job_name, (line 40)
     //JOB LISTS
-3. Add new key(s) to initialisation_data to hold the results data for the job (probably needs to happen with step 7 and 9
-   though) near line 100
+3. Add new key(s) to initialisation_data to hold the results data for the job (probably needs to happen with step 7 and 9  though) near line 100
     //INITIALISATION DATA
 4. Check if the active listeners need a new biod3 call (around line 496) and if the results found object needs updating
     //RESULT POLL FLAGS
@@ -43,7 +42,7 @@ Have added the comment lines that mark the areas
 5. Does the method need an advanced panel toggle (around line 370) and the sections below for toggling the seq and struct
    forms
     //ADVANCED PANELS
-6. for UUID submission/lookup add new panel display trigger (from line 790)
+6. for UUID submission/lookup add new panel display trigger (from line 790). Ensure you have the correct results_visible set
     // PANEL DISPLAY
 7. In ractive_helpers.js add new unsetter in the clear_settings() to match any keys
    you added in step 3 above. (line 10)
@@ -58,6 +57,7 @@ Have added the comment lines that mark the areas
     //RESULTS DECISIONS
     //PRODUCED NOTHING
     //DOWNLOADS PANEL
+    Some downloads needs setting by //EXTRA PANELS FOR SOME JOBS TYPES:
 11. In requests_index.js in process_file() add a new if for the new data type you want
     to parse, if a parser is needed, see point 14.
     //PARSE DECISION
