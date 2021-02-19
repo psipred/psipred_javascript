@@ -1,8 +1,9 @@
 # Building and moving the code to the webiste project
 
-1. npm run-script build
+1. npm install (if not already done)
+2. npm run-script build
 makes the js blob
-2. cp build/psipred.js ~/Code/psipred_website/static/js
+3. cp build/psipred.js ~/Code/psipred_website/static/js
 
 # Layout
 
