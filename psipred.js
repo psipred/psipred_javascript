@@ -146,8 +146,8 @@ let endpoints_url = null;
 let submit_url = null;
 let times_url = null;
 let gears_svg = "http://bioinf.cs.ucl.ac.uk/psipred_beta/static/images/gears.svg";
-let main_url = "http://bioinf.cs.ucl.ac.uk";
-let app_path = "/psipred_beta";
+let main_url = "http://bioinfstage3.cs.ucl.ac.uk";
+let app_path = "/analytics_automated";
 let file_url = '';
 
 if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
