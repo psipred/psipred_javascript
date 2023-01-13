@@ -30,11 +30,11 @@ Functions for actually making API calls
 # Adding new service functionality
 Have added the comment lines that mark the areas
 
-1. Ensure you have completed the adding new functionality steps for the psipred_webiste application. Adding new model fields and updating the results panel template. Take a note of the new results panel values you added.
+1. Ensure you have completed the adding new functionality steps for the psipred_website application. Adding new model fields and updating the results panel template. Take a note of the new results panel values you added.
 
 2. In main.js add new job to the end of job_list and a name to job_name, (line 40)
     //JOB LISTS
-3. Add new key(s) to initialisation_data to hold the results data for the job (probably needs to happen with step 7 and 9  though) near line 100
+3. Add new key(s) to initialisation_data to hold the results data for the job (probably needs to happen with step 7 and 9  though) near line 120ish
     //INITIALISATION DATA
 4. Check if the active listeners need a new biod3 call (around line 496) and if the results found object needs updating
     //RESULT POLL FLAGS
@@ -49,7 +49,7 @@ Have added the comment lines that mark the areas
    you added in step 3 above. (line 10)
     //UNSETTERS
 8. In prepare_downloads_html() add any exceptions for job types that have downloads of
-    other types. e.g bioserf also servers pgenthreader results
+    other types. e.g bioserf also server pgenthreader results
     //DOWNLOAD EXCEPTIONS
 9. In handle_results() add new if(result_dict.name === [DATA_FILE]) to handle the
     news results file, adding to the downloads string, calling a process_file() etc.
@@ -65,5 +65,5 @@ Have added the comment lines that mark the areas
 12. In parsers_index.js add any new parsers for the data files for your job. This will
     tie more closely to the parser calls in request_index.js see 13
 13. Doublecheck 7 above in case you added new things to hold data in step 12
-14. In main.js  - ractive.on(submit) makes sure you catch all the form elements and pass them to verify_and_send(). Note that form elements are only available if they are visible on the html page
+14. In main.js  - ractive.on(submit) makes sure you catch all the form elements and pass them to verify_and_send(). Note that form elements are only available if they are visible on the html page - redundant because now handle as code
 15. Ensure send_job() correctly appends new options to the form - if you have advanced options
